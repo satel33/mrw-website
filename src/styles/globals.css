@@ -1,0 +1,214 @@
+/* ./styles/globals.css */
+@tailwind base;
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Regular.ttf') format('truetype'),
+    url('../fonts/Gilroy-Regular.eot'),
+    url('../fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Medium.ttf') format('truetype'),
+    url('../fonts/Gilroy-Medium.eot'),
+    url('../fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Bold.ttf') format('truetype'),
+    url('../fonts/Gilroy-Bold.eot'),
+    url('../fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-SemiBold.ttf') format('truetype'),
+    url('../fonts/Gilroy-SemiBold.eot'),
+    url('../fonts/Gilroy-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Heavy.ttf') format('truetype'),
+    url('../fonts/Gilroy-Heavy.eot'),
+    url('../fonts/Gilroy-Heavy.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Heavy.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Light.ttf') format('truetype'),
+    url('../fonts/Gilroy-Light.eot'),
+    url('../fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  ul {
+    @apply ml-5;
+    @apply mb-5;
+    @apply list-disc;
+  }
+  ol {
+    @apply ml-5;
+    @apply mb-5;
+    @apply list-decimal;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .flex-basis-auto {
+      flex-basis: auto;
+    }
+    .flex-basis-100 {
+      flex-basis: 100%;
+    }
+    .grid-autoSize-rows {
+      grid-template-rows: auto 1fr auto;
+    }
+    .hero-section-height {
+      height: calc(100vh - 71px);
+    }
+
+    .hero-section-height-mobile {
+      height: calc(100vh - 71px - 50px);
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
+    .fade-in {
+      opacity: 100;
+    }
+
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .sidebar-main-layout {
+      grid-template-columns: 240px 1fr;
+    }
+
+    /* .max-w-screen-2xl {
+      max-width: 1536px;
+    } */
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.max-w-screen-sm {
+  max-width: 640px;
+}
+.max-w-screen-md {
+  max-width: 768px;
+}
+.max-w-screen-lg {
+  max-width: 1024px;
+}
+.max-w-screen-xl {
+  max-width: 1280px;
+}
+
+:focus {
+  outline: none;
+}
+
+/* React Modal */
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+  overflow: hidden;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+/* React Elastic Carousel */
+.rec .rec-slider-container {
+  margin: 0px !important;
+}
+
+.hero-video-overlay {
+  background: rgb(191, 229, 255);
+  background: linear-gradient(
+    15deg,
+    rgba(191, 229, 255, 1) 0%,
+    rgba(255, 250, 255, 1) 100%
+  );
+}
+
+strong {
+  font-weight: 700;
+}
+
+.controls {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 1.25rem 0;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.controls > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: 2rem;
+  width: 2rem;
+  background: #3e92cc;
+  color: #fff;
+  border-radius: 100%;
+}
+.controls > button:first-child {
+  margin-right: 0.25rem;
+}

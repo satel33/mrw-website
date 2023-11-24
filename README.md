@@ -1,0 +1,10 @@
+MRW - Website Frontend
+
+Env variables ALL
+
+```
+NEXT_PUBLIC_SANITY_DATASET='production'
+NEXT_PUBLIC_SANITY_PROJECT_ID=''
+SANITY_API_TOKEN=''
+SANITY_PREVIEW_SECRET=''
+```

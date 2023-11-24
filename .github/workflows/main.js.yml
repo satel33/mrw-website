@@ -1,0 +1,41 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main
+        
+defaults:
+  run:
+    working-directory: ./main
+    
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: main
+          path: ./main
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}         
+
+            
+      - run: npm install
+        working-directory: ./main       
+
+        
+      - run: npm run build
+        working-directory: ./main
+      - run: pm2 reload websiteMain || pm2 start npm --name "websiteMain" -- run start
+        working-directory: ./main
+        env:
+          CI: true
